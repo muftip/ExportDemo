@@ -1,0 +1,20 @@
+﻿@model List<ExportDemo.Models.Product>
+<a href="/Home/ExportExcel" class="btn btn-primary">Export Excel</a>
+<a href="@Url.Action("ExportPdf", "Home")" class="btn btn-primary">Export PDF</a>
+<h1>Product List</h1>
+
+<table>
+    <thead>
+        <tr><th>Id</th><th>Name</th><th>Price</th></tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+@model List<ExportDemo.Models.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PDF Export</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Products PDF</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</body>
+</html>
